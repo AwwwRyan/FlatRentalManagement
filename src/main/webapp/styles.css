@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    /* Changed to white */
+    color: #0c0b0b;
+}
+
+
+/* Modern Header Styles */
+
+header {
+    background-color: #d9534f;
+    /* Header background color (red) */
+    padding: 19px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    /* Align items vertically center */
+    justify-content: space-between;
+    /* Allows for spacing */
+}
+
+.logo h1 {
+    font-size: 1.25rem;
+    /* Made font size a bit smaller */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.location select {
+    padding: 0px;
+    /* Padding for the select element */
+    border: 4px solid #d9534f;
+    /* Red border */
+    margin-left: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    /* Makes background transparent */
+    color: #ffffff;
+    /* Text color */
+    font-size: 1rem;
+    /* Smaller font size */
+    transition: background-color 0.3s ease;
+}
+
+.location select:focus {
+    outline: none;
+    /* Remove outline on focus */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Optional: slightly visible background on focus */
+}
+
+.location select option {
+    background-color: white;
+    /* Ensure options have a white background */
+    color: #0c0b0b;
+    /* Text color for options */
+}
+
+.search-container {
+    flex-grow: 1;
+    /* Allow search-container to grow and take available space */
+    display: flex;
+    justify-content: center;
+    /* Center search bar */
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px;
+    /* Add margin for side spacing */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    /* Links are white */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    /* Smaller font size */
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #c9302c;
+    /* Darker red on hover */
+}
+
+.login-signup a {
+    color: white;
+    /* Login link color */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    background-color: transparent;
+    transition: color 0.3s;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    /* Smaller font size */
+}
+
+.login-signup a:hover {
+    color: #c9302c;
+    /* Darker red on hover */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    /* Added margin for spacing */
+}
+
+.search-container input[type="text"],
+.search-container select {
+    padding: 8px;
+    /* Reduced padding */
+    border: 2px solid #d9534f;
+    /* Red border */
+    border-radius: 20px;
+    background-color: white;
+    /* Background for input and select */
+    color: #0c0b0b;
+    /* Text color */
+    font-size: 0.9rem;
+    /* Smaller font size */
+    transition: background-color 0.3s ease;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #ccc;
+    /* Placeholder color */
+}
+
+.search-container button {
+    padding: 8px 15px;
+    /* Reduced padding */
+    background-color: #d9534f;
+    /* Button background (red) */
+    color: white;
+    /* Button text color */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    /* Smaller font size */
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #c9302c;
+    /* Darker red on hover */
+}
+
+.budget-dropdown {
+    position: relative;
+}
+
+.budget-dropdown select {
+    padding: 8px;
+    /* Reduced padding */
+    border: 2px solid #d9534f;
+    /* Red border */
+    border-radius: 20px;
+    background-color: white;
+    /* Background for select */
+    color: #0c0b0b;
+    /* Text color */
+    font-size: 0.9rem;
+    /* Smaller font size */
+}
+
+.budget-dropdown::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0c0b0b;
+    /* Arrow color */
+    pointer-events: none;
+    /* Arrow doesn't block interaction */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .search-container {
+        display: none;
+    }
+    .login-signup {
+        margin-left: auto;
+    }
+}
+
+main {
+    padding: 2rem;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    /* Added padding */
+}
+
+.property-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    /* Added transition */
+}
+
+.property-card:hover {
+    transform: scale(1.05);
+    /* Added hover effect */
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.property-card h3,
+.property-card p {
+    margin: 10px 0;
+}
+
+.property-card .price {
+    font-weight: bold;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.property-card button {
+    background-color: #c9302c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.property-card button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffbb33;
+}
+
+.footer-section p {
+    line-height: 1.8;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffbb33;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 1px solid #444444;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom p a {
+    color: #ffbb33;
+    text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+    text-decoration: underline;
+}
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: 400px;
+    /* Fixed height */
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image fills the container without stretching */
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Next & Previous Buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(210, 47, 47, 0.8);
+}
+
+.property-card {
+    width: 450px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+.image-container img.active-image {
+    opacity: 1;
+}
+
+.property-card:hover .image-container img {
+    opacity: 0;
+}
+
+.property-card:hover .image-container img:nth-child(2) {
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.property-card:hover .image-container img:nth-child(3) {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.property-card:hover .image-container img:nth-child(4) {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+
+/* Ripple effect on click */
+
+.buy-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+}
+
+.buy-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: 0s;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.underline {
+    text-align: center;
+    /* Center the heading */
+    margin: 20px 0;
+    /* Margin above and below */
+    font-size: 1.5rem;
+    /* Adjust the font size as needed */
+    position: relative;
+    /* Set position to relative for pseudo-element */
+    color: #0c0b0b;
+    /* Text color */
+}
+
+.underline::after {
+    content: "";
+    /* Empty content for the pseudo-element */
+    display: block;
+    /* Make it a block element */
+    width: 50%;
+    /* Width of the divider line */
+    height: 4px;
+    /* Thickness of the divider */
+    background-color: #d9534f;
+    /* Color of the divider (red) */
+    margin: 10px auto;
+    /* Center it and add vertical spacing */
+}
